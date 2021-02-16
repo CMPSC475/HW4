@@ -63,7 +63,11 @@ if average case binary is selected and min is checked then subject = subject + "
  and if average case is checked then get the return average cases
  if worst is checked return worst cases,
  put the cases in a nested loop inside worst or average since all the cases are deterimed by either worst or average
+
+
+ --leave the comments for future reference
  */
+
 
 
         //Binary Search Tree
