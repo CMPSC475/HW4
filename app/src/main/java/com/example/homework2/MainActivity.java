@@ -6,12 +6,15 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.MenuPopupWindow;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+
+import javax.security.auth.Subject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +42,161 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
+    public void onCLick(View v){
+        String to = "To: " + EmailAddress.getText().toString();
+        String subject = "Stuject: "
+                + EmailSubject.getText().toString();
+        String min = "Get minimum :" + MenuPopupWindow.MenuDropDownListView.getSelectedItem()).toString();
+        String search = "Search :" + Search.gettext().toString();
+        String Structure = Dropdown.getSelectedItem().toString();
+        String data = "2-3 tree, Binary Search, Hash, Linked List, Min Heap";
+
+        To.settext(to);
+        Subject.setText(subject);
+        GetMin.setText(min);
+        Search.setText(search);
+        Structure.compareTo(Data);
+/*
+if average case binary is selected and min is checked then subject = subject + "Get minimum runtime"
+ so the same for insert and search
+ and if average case is checked then get the return average cases
+ if worst is checked return worst cases,
+ put the cases in a nested loop inside worst or average since all the cases are deterimed by either worst or average
+ */
+
+
+        //Binary Search Tree
+if (AverageCase.isChecked()) {
+    subject = subject + "Average Case Time Complexity for Binary Search Tree: ";
+    if (GetMin.isChecked()) {
+        subject = subject + "Get Minimum: " + "O(Log(n))";
+    }
+    if (Insert.isChecked()) {
+        subject = subject + "Insert: " + "O(Log(n))";
+    }
+    if (Search.isChecked()) {
+        subject = subject + "Search: " + "O(Log(n))";
+    }
+}
+
+if (WorstCase.isChecked()) {
+    subject = subject + "Worst Case Time Complexity for Binary Search Tree: ";
+    if (GetMin.isChecked()) {
+        subject = subject + "Get Minimum: " + "O(n)";
+    }
+    if (Insert.isChecked()) {
+        subject = subject + "Insert: " + "O(n)";
+    }
+
+    if (Search.isChecked()) {
+        subject = subject + "Search: " + "O(n)";
+    }
+}
+
+//2-3 Tree
+if (AverageCase.isChecked()) {
+    subject = subject + "Average Case Time Complexity for 2-3 Tree: ";
+    if (GetMin.isChecked()) {
+        subject = subject + "Get Minimum: " + "O(Log(n))";
+    }
+    if (Insert.isChecked()) {
+        subject = subject + "Insert: " + "O(Log(n))";
+    }
+    if (Search.isChecked()) {
+        subject = subject + "Search: " + " O(Log(n))";
+        if (WorstCase.isChecked()) {
+            subject = subject + "Worst Case Time Complexity for 2-3 Tree: ";
+            if (GetMin.isChecked()) {
+                subject = subject + "Get Minimum: " + "O(Log(n))";
+            }
+            if (Insert.isChecked()) {
+                subject = subject + "Insert: " + "O(Log(n))";
+            }
+            if (Search.isChecked()) {
+                subject = subject + "Search: " + "O(Log(n))";
+            }
+        }
+    }
+}
+//Hash Table
+if (AverageCase.isChecked()) {
+    subject = subject + "Average Case Time Complexity for Hash Table: ";
+
+    if (GetMin.isChecked()) {
+        subject = subject + "Get Minimum: " + "O(1)";
+    }
+    if (Insert.isChecked()) {
+        subject = subject + "Insert: " + "O(1)";
+    }
+    if (Search.isChecked()) {
+        subject = subject + "Search: " + "O(1)";
+    }
+}
+if (WorstCase.isChecked()) {
+    subject = subject + "Worst Case Time Complexity for Hash Table: ";
+    if (GetMin.isChecked()) {
+        subject = subject + "Get Minimum: " + "O(n)";
+    }
+    if (Insert.isChecked()) {
+        subject = subject + "Insert: " + "O(n)";
+    }
+    if (Search.isChecked()) {
+        subject = subject + "Search: " + "O(n)";
+    }
+}
+
+//Linked List
+if (AverageCase.isChecked()) {
+    subject = subject + "Average Case Time Complexity for Linked List: ";
+    if (GetMin.isChecked()) {
+        subject = subject + "Get Minimum: " + "O(n)";
+    }
+    if (Insert.isChecked()) {
+        subject = subject + "Insert: " + "O(1)";
+    }
+    if (Search.isChecked()) {
+        subject = subject + "Search: " + "O(n)";
+    }
+}
+if (WorstCase.isChecked()) {
+    subject = subject + "Worst Case Time Complexity for Linked List: ";
+    if (GetMin.isChecked()) {
+        subject = subject + "Get Minimum: " + "O(n)";
+    }
+    if (Insert.isChecked()) {
+        subject = subject + "Insert: " + "O(1)";
+    }
+    if (Search.isChecked()) {
+        subject = subject + "Search: " + "O(n)";
+    }
+}
+//Min Heap
+if (AverageCase.isChecked()) {
+    subject = subject + "Average Case Time Complexity for Min Heap: ";
+    if (GetMin.isChecked()) {
+        subject = subject + "Get Minimum: " + "O(1)";
+    }
+    if (Insert.isChecked()) {
+        subject = subject + "Insert: " + "O(n)";
+    }
+    if (Search.isChecked()) {
+        subject = subject + "Search: " + "O(n)";
+    }
+}
+
+if (WorstCase.isChecked()) {
+    subject = subject + "Worst Case Time Complexity for Min Heap: ";
+    if (GetMin.isChecked()) {
+        subject = subject + "Get Minimum: " + "O(1)";
+    }
+    if (Insert.isChecked()) {
+        subject = subject + "Insert: " + "O(n)";
+    }
+    if (Search.isChecked()) {
+        subject = subject + "Search: " + "O(n)";
+    }
+}
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -54,3 +212,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
+
+   // https://mkyong.com/android/android-spinner-drop-down-list-example/
