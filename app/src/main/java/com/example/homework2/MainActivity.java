@@ -55,8 +55,10 @@ public class MainActivity extends AppCompatActivity {
             final int[] casetest = {0};
             casetest[0] = 2;
 
-            Snackbar.make(view, "Dr. Blum, i dont know why 'To:' Doesnt work \n" + totext, Snackbar.LENGTH_LONG)
+            /*Snackbar.make(view, "Dr. Blum, i dont know why 'To:' Doesnt work \n" + totext, Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
+
+             */
 
             final boolean[] changed = {false};
             RadioGroup radioGroup = findViewById(R.id.RadioGroup);
