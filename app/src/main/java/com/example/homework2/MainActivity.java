@@ -3,6 +3,7 @@ package com.example.homework2;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -43,10 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         fab.setOnClickListener(view -> {
-            /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
 
-             */
+
             TextView EmailAddress = findViewById(R.id.editText_Email_Address);
             TextView EmailSubject = findViewById(R.id.editText_email_subject);
             String spinnertext = spinner.getSelectedItem().toString();
@@ -55,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
             final String[] radioText = {""};
             final int[] casetest = {0};
             casetest[0] = 2;
+
+            Snackbar.make(view, "Dr. Blum, i dont know why 'To:' Doesnt work \n" + totext, Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+
             final boolean[] changed = {false};
             RadioGroup radioGroup = findViewById(R.id.RadioGroup);
             radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
@@ -70,9 +73,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-
             if(!changed[0]){    //case 1 is worst case 2 is average
-                radioText[0] ="Average Case Time Complexity for " + spinnertext;
+                radioText[0] ="Average Case Time Complexity for " + spinnertext + ":";
             }
 
             if(spinnertext.equals("2-3 Tree"))
