@@ -14,9 +14,12 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.text.BreakIterator;
+
 import javax.security.auth.Subject;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onCLick(View v){
         String to = "To: " + EmailAddress.getText().toString();
-        String subject = "Stuject: "
+        String subject = "Subject: "
                 + EmailSubject.getText().toString();
         String min = "Get minimum :" + MenuPopupWindow.MenuDropDownListView.getSelectedItem()).toString();
         String search = "Search :" + Search.gettext().toString();
