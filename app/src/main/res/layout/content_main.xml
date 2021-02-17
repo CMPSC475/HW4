@@ -93,10 +93,10 @@
         android:id="@+id/spinner"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:entries="@array/structureList"
         app:layout_constraintEnd_toEndOf="@+id/editText_email_subject"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/textView_Data_struct"
         app:layout_constraintTop_toBottomOf="@+id/textView_Data_struct"
         tools:visibility="visible" />
