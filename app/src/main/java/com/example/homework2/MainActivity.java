@@ -9,16 +9,36 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.MenuPopupWindow;
 import androidx.appcompat.widget.Toolbar;
 
+import android.provider.MediaStore;
 import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.CheckBox;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.text.BreakIterator;
 
 import javax.security.auth.Subject;
 
 public class MainActivity extends AppCompatActivity {
+
+    private TextView To = findViewById(R.id.textViewTo);
+    private TextView TextViewSubject = findViewById(R.id.TextViewSubject);
+    private CheckBox GetMin = findViewById(R.id.getMin_Checkbox);
+    private CheckBox Search = findViewById(R.id.search_Checkbox);
+    private CheckBox Insert = findViewById(R.id.insert_CheckBox);
+
+    private RadioGroup RadioGroupCases = findViewById(R.id.RadioGroup);
+    private RadioButton AverageCase = findViewById(R.id.averageCase_RadioButton);
+    private RadioButton WorstCase = findViewById(R.id.worstCase_RadioButton);
+    private Spinner spinner = findViewById(R.id.spinner);
+
+
+    //Structure.compareTo(Data);
 
 
     @Override
@@ -29,6 +49,18 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
+
+        //String min = "Get minimum :" + MenuPopupWindow.MenuDropDownListView.getSelectedItem().toString();
+        //String search = "Search :" + Search.gettext().toString();
+        spinner.getSelectedItem().toString();
+        String data = "2-3 tree, Binary Search, Hash, Linked List, Min Heap";
+
+        To.setText(getString(R.string.to));
+        TextViewSubject.setText(getString(R.string.subject));
+        GetMin.setText(getString(R.string.getMin));
+        Search.setText(getString(R.string.search));
+
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,20 +77,14 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    public void onClick(View v) {
-        String to = "To: " + findViewById(R.id.editText_Email_Address).toString();
-        String subject = "Subject: "
-                + findViewById(R.id.editText_email_subject).toString();
-        String min = "Get minimum :" + MenuPopupWindow.MenuDropDownListView.getSelectedItem().toString();
-        String search = "Search :" + Search.gettext().toString();
-        String Structure = Dropdown.getSelectedItem().toString();
-        String data = "2-3 tree, Binary Search, Hash, Linked List, Min Heap";
+    TextView EmailAddress = findViewById(R.id.editText_Email_Address);
+    TextView EmailSubject = findViewById(R.id.editText_email_subject);
 
-        To.settext(to);
-        Subject.setText(subject);
-        GetMin.setText(min);
-        Search.setText(search);
-        Structure.compareTo(Data);
+    public void onClick(View v) {
+        String to = "To: " + EmailAddress.getText().toString();
+        String subject = "Subject: "
+                + EmailSubject.getText().toString();
+
 /*
 if average case binary is selected and min is checked then subject = subject + "Get minimum runtime"
  so the same for insert and search
@@ -70,10 +96,8 @@ if average case binary is selected and min is checked then subject = subject + "
  --leave the comments for future reference
  */
 
-
-        //averageCase_RadioButton
         //Binary Search Tree
-        if (findViewById(R.id.averageCase_RadioButton).OnClick()) {
+        if (AverageCase.isChecked()) {
             subject = subject + "Average Case Time Complexity for Binary Search Tree: ";
             if (GetMin.isChecked()) {
                 subject = subject + "Get Minimum: " + "O(Log(n))";
@@ -100,7 +124,7 @@ if average case binary is selected and min is checked then subject = subject + "
             }
         }
 
-//2-3 Tree
+        //2-3 Tree
         if (AverageCase.isChecked()) {
             subject = subject + "Average Case Time Complexity for 2-3 Tree: ";
             if (GetMin.isChecked()) {
