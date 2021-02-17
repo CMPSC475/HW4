@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void onCLick(View v){
+    public void onClick(View v){
         String to = "To: " + EmailAddress.getText().toString();
         String subject = "Subject: "
                 + EmailSubject.getText().toString();
