@@ -25,7 +25,7 @@
     <string name="insert">Insert</string>
     <string name="search">Search</string>
     <string name="result">Result</string>
-    <string name="to">To:</string>
-    <string name="subject">Subject:</string>
+    <string name="to">To: </string>
+    <string name="subject">Subject: </string>
     <string name="action_compose">actioncompose</string>
 </resources>
