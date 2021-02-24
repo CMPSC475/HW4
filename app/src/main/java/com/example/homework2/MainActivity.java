@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
         switch (item.getItemId()) {
             case R.id.action_compose:
                 sendEmail();
@@ -64,10 +63,9 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_EMAIL, new String[] {emailAddress});
         intent.putExtra(Intent.EXTRA_SUBJECT, emailSubject);
         intent.putExtra(Intent.EXTRA_TEXT, emailContent);
-
         Spinner spinner = findViewById(R.id.spinner);
         String spinnertext = spinner.getSelectedItem().toString();
-        String subjectText = "Subject: " + emailSubject + "\n";
+
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
@@ -94,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         final RadioButton AverageCase = findViewById(R.id.averageCase_RadioButton);
         final RadioButton WorstCase = findViewById(R.id.worstCase_RadioButton);
         int casetest = 0;
+
         AverageCase.setOnClickListener(view -> {
             AverageCase.setChecked(true);
             if (WorstCase.isChecked()) {
@@ -108,78 +107,43 @@ public class MainActivity extends AppCompatActivity {
                 WorstCase.setChecked(false);
             }
         });
+
         result.append(emailSubject).append("\n");
         if (WorstCase.isChecked()) {
             result.append("Worst Case Time Complexity for ").append(spinnertext).append(":\n");
             casetest = 0;
-
         } else if (AverageCase.isChecked()) {
             result.append("Average Case Time Complexity for ").append(spinnertext).append(":\n");
             casetest = 1;
         }
 
-        int spinnercase;
+        int spinnercase = 0;
         switch(spinnertext){
             case "2-3 Tree":
                 spinnercase = 0;
-                if (GetMin.isChecked()) {
-                    result.append("Get Minimum: ").append(runtime[spinnercase][casetest][0]).append("\n");
-                }
-                if (Insert.isChecked()) {
-                    result.append("Insert: ").append(runtime[spinnercase][casetest][1]).append("\n");
-                }
-                if (Search.isChecked()) {
-                    result.append("Search: ").append(runtime[spinnercase][casetest][2]).append("\n");
-                }
                 break;
             case "Binary Search Tree":
                 spinnercase = 1;
-                if (GetMin.isChecked()) {
-                    result.append("Get Minimum: ").append(runtime[spinnercase][casetest][0]).append("\n");
-                }
-                if (Insert.isChecked()) {
-                    result.append("Insert: ").append(runtime[spinnercase][casetest][1]).append("\n");
-                }
-                if (Search.isChecked()) {
-                    result.append("Search: ").append(runtime[spinnercase][casetest][2]).append("\n");
-                }
                 break;
             case "Hash Table":
                 spinnercase = 2;
-                if (GetMin.isChecked()) {
-                    result.append("Get Minimum: ").append(runtime[spinnercase][casetest][0]).append("\n");
-                }
-                if (Insert.isChecked()) {
-                    result.append("Insert: ").append(runtime[spinnercase][casetest][1]).append("\n");
-                }
-                if (Search.isChecked()) {
-                    result.append("Search: ").append(runtime[spinnercase][casetest][2]).append("\n");
-                }
                 break;
             case "Linked List":
                 spinnercase = 3;
-                if (GetMin.isChecked()) {
-                    result.append("Get Minimum: ").append(runtime[spinnercase][casetest][0]).append("\n");
-                }
-                if (Insert.isChecked()) {
-                    result.append("Insert: ").append(runtime[spinnercase][casetest][1]).append("\n");
-                }
-                if (Search.isChecked()) {
-                    result.append("Search: ").append(runtime[spinnercase][casetest][2]).append("\n");
-                }
                 break;
             case "Min Heap":
                 spinnercase = 4;
-                if (GetMin.isChecked()) {
-                    result.append("Get Minimum: ").append(runtime[spinnercase][casetest][0]).append("\n");
-                }
-                if (Insert.isChecked()) {
-                    result.append("Insert: ").append(runtime[spinnercase][casetest][1]).append("\n");
-                }
-                if (Search.isChecked()) {
-                    result.append("Search: ").append(runtime[spinnercase][casetest][2]).append("\n");
-                }
                 break;
+        }
+
+        if (GetMin.isChecked()) {
+            result.append("Get Minimum: ").append(runtime[spinnercase][casetest][0]).append("\n");
+        }
+        if (Insert.isChecked()) {
+            result.append("Insert: ").append(runtime[spinnercase][casetest][1]).append("\n");
+        }
+        if (Search.isChecked()) {
+            result.append("Search: ").append(runtime[spinnercase][casetest][2]).append("\n");
         }
 
         final TextView To = findViewById(R.id.textViewTo);
