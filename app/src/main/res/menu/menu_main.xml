@@ -7,4 +7,10 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_compose"
+        android:icon="@drawable/ic_baseline_edit_24"
+        android:iconTint="#FFFFFF"
+        android:title="@string/action_compose"
+        app:showAsAction="ifRoom" />
 </menu>
