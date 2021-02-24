@@ -45,10 +45,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
+        int id = item.getItemId();
+        switch (id) {
             case R.id.action_compose:
                 sendEmail();
                 item.setIcon(R.drawable.ic_baseline_email_24);
+            case R.id.action_compose:
+                sendEmail();
+                item.setIcon(R.drawable.ic_baseline_edit_24);
             default:
                 return super.onOptionsItemSelected(item);
         }
