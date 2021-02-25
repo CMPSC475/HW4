@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         final RadioButton AverageCase = findViewById(R.id.averageCase_RadioButton);
         final RadioButton WorstCase = findViewById(R.id.worstCase_RadioButton);
         int casetest = 0;
-
+//it keeps or stays in an infinite loop
 //        AverageCase.setOnClickListener(view -> {
 ////            AverageCase.setChecked(true);
 //            if (WorstCase.isChecked()) {
