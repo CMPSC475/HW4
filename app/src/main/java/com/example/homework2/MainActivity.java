@@ -25,7 +25,7 @@ import java.util.Arrays;
 import javax.security.auth.Subject;
 
 public class MainActivity extends AppCompatActivity {
-
+    public boolean iconcheck = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,18 +44,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        switch (id) {
-            case R.id.action_compose:
-                sendEmail();
-                item.setIcon(R.drawable.ic_baseline_email_24);
-            case R.id.action_compose:
-                sendEmail();
-                item.setIcon(R.drawable.ic_baseline_edit_24);
-            default:
-                return super.onOptionsItemSelected(item);
+     public boolean onOptionsItemSelected(MenuItem item) {
+        if(iconcheck){
+            sendEmail();
+            item.setIcon(R.drawable.ic_baseline_email_24);
+            iconcheck = false;
+        }else{
+            item.setIcon(R.drawable.ic_baseline_edit_24);
+            iconcheck = true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     private void sendEmail() {
