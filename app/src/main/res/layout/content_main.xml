@@ -161,16 +161,18 @@
             android:checked="true"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="@string/averageCase"
-            android:onClick="onClick"/>
+            android:text="@string/averageCase"/>
+<!--            android:onClick="onClick"-->
+
 
         <RadioButton
             android:id="@+id/worstCase_RadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="@string/worstCase"
-            android:onClick="onClick"/>
+            android:text="@string/worstCase"/>
+<!--            android:onClick="onClick"-->
+
     </RadioGroup>
 
     <TextView

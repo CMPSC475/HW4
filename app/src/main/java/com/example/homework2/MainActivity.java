@@ -95,20 +95,20 @@ public class MainActivity extends AppCompatActivity {
         final RadioButton WorstCase = findViewById(R.id.worstCase_RadioButton);
         int casetest = 0;
 
-        AverageCase.setOnClickListener(view -> {
-            AverageCase.setChecked(true);
-            if (WorstCase.isChecked()) {
-                WorstCase.setChecked(false);
-            }
-        });
-
-        WorstCase.setOnClickListener(view -> {
-            WorstCase.setChecked(true);
-
-            if (AverageCase.isChecked()) {
-                WorstCase.setChecked(false);
-            }
-        });
+//        AverageCase.setOnClickListener(view -> {
+////            AverageCase.setChecked(true);
+//            if (WorstCase.isChecked()) {
+//                WorstCase.setChecked(false);
+//            }
+//        });
+//
+//        WorstCase.setOnClickListener(view -> {
+////            WorstCase.setChecked(true); infinite recur
+//
+//            if (AverageCase.isChecked()) {
+//                WorstCase.setChecked(false);
+//            }
+//        });
 
         result.append(emailSubject).append("\n");
         if (WorstCase.isChecked()) {
